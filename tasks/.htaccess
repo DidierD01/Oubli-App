@@ -1,0 +1,3 @@
+Options Indexes FollowSymLinks
+AllowOverride All
+Require all granted
