@@ -25,7 +25,7 @@ switch ($request) {
         break;
 }
 
-require_once __DIR__ . '/controllers/taskcontroller.php';
+require_once __DIR__ . '../controllers/taskcontroller.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -73,7 +73,7 @@ include('nav.php');
         <!-- Message si l'utilisateur n'est pas connecté -->
         <div class="alert alert-warning text-center" role="alert">
             <h4>Veuillez vous connecter pour voir vos tâches.</h4>
-            <a href="/compte/login.php" class="btn btn-primary mt-3">Se connecter</a>
+            <a href="../compte/login.php" class="btn btn-primary mt-3">Se connecter</a>
         </div>
     <?php else: ?>
         <h1 class="text-center my-4">Mes Tâches</h1>
@@ -107,7 +107,7 @@ include('nav.php');
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body small">
-                <form action="/public/index.php?action=create" method="POST">
+                <form action="../public/index.php?action=create" method="POST">
                     <div class="mb-3">
                         <label for="taskName" class="form-label">Nom de la tâche</label>
                         <input type="text" class="form-control" id="taskName" name="tasks_name" required>
@@ -147,7 +147,7 @@ include('nav.php');
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fermer"></button>
                     </div>
                     <div class="offcanvas-body small">
-                        <form action="/public/index.php?action=update&id=<?= $task['id_tasks'] ?>" method="POST">
+                        <form action="../public/index.php?action=update&id=<?= $task['id_tasks'] ?>" method="POST">
                             <div class="mb-3">
                                 <label for="tasks_name_<?= $task['id_tasks'] ?>" class="form-label">Nom</label>
                                 <input type="text" class="form-control" id="tasks_name_<?= $task['id_tasks'] ?>" name="tasks_name" value="<?= htmlspecialchars($task['tasks_name']) ?>" required>
