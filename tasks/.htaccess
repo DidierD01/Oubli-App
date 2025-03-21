@@ -1,3 +1,2 @@
-Options Indexes FollowSymLinks
-AllowOverride All
-Require all granted
+DirectoryIndex index.php
+Options -Indexes
