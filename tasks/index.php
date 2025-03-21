@@ -1,6 +1,4 @@
 <?php
-
-<?php
 // Récupère l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
