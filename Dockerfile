@@ -8,7 +8,7 @@ RUN a2enmod rewrite
 RUN sed -i 's|AllowOverride None|AllowOverride All|g' /etc/apache2/apache2.conf
 
 # Ajoute le nom du serveur pour éviter un avertissement Apache
-RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+RUN echo "ServerName metro.proxy.rlwy.net" >> /etc/apache2/apache2.conf
 
 # Installe les extensions PHP nécessaires (mysqli, pdo, pdo_mysql)
 RUN docker-php-ext-install mysqli pdo pdo_mysql
