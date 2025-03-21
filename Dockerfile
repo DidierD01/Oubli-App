@@ -1,16 +1,20 @@
 FROM php:8.2-apache
 
-# Activer le mod_rewrite
+# Active le module rewrite
 RUN a2enmod rewrite
 
-# Autoriser .htaccess dans /var/www/html
+# Autorise .htaccess
 RUN sed -i 's|AllowOverride None|AllowOverride All|g' /etc/apache2/apache2.conf
 
-# Copier tous les fichiers dans le bon dossier
-COPY . /var/www/html/
+# Définit le dossier /app/tasks comme racine du site
+WORKDIR /var/www/html
+COPY tasks/ /var/www/html/
 
-# Droits corrects
+# Copie le fichier .htaccess s’il est dans /tasks
+COPY tasks/.htaccess /var/www/html/
+
+# Donne les bons droits
 RUN chown -R www-data:www-data /var/www/html
 
-# Exposer le port 80 (important pour Render)
+# Expose le port
 EXPOSE 80
