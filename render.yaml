@@ -1,10 +1,6 @@
-# Configuration Render
 services:
   - type: web
     name: oubli-app
-    env: php
     plan: free
-    buildCommand: ""
-    startCommand: ""
-    rootDir: .
     region: oregon
+    env: docker
