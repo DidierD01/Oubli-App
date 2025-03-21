@@ -1,11 +1,11 @@
 <?php
 
 class Database {
-    private $host = 'metro.proxy.rlwy.net';
-    private $port = 26698;
-    private $db_name = 'railway'; // Change si nécessaire
-    private $username = 'root';  // Change si nécessaire
-    private $password = 'rglxfUPkHBidvHHeXYLLLckxROKYJMpB'; // Change si nécessaire
+    private $host = getenv('DB_HOST');
+    private $port = getenv('DB_PORT');
+    private $db_name = getenv('DB_NAME');
+    private $username = getenv('DB_USER');
+    private $password = getenv('DB_PASSWORD');
     private $conn;
 
     // Méthode pour établir la connexion à la base de données
