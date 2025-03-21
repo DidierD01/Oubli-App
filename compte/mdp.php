@@ -1,16 +1,10 @@
 <?php
 session_start();
 
-$servername = "metro.proxy.rlwy.net";
-$port = 26698;
-$username = "root";
-$password = "rglxfUPkHBidvHHeXYLLLckxROKYJMpB";
-$dbname = "railway";
+require_once '../config/database.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Erreur de connexion : " . $conn->connect_error);
-}
+$db = new Database();
+$conn = $db->getConnection();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['token']) && isset($_POST['new_password']) && isset($_POST['confirm_password'])) {
