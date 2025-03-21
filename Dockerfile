@@ -21,12 +21,15 @@ RUN mkdir -p /var/log/apache2/ && \
 # Définit le répertoire de travail
 WORKDIR /var/www/html
 
-# Copie tout le projet dans /var/www/html
-COPY . /var/www/html
+# Copie les fichiers nécessaires
+COPY index.php /var/www/html/
+COPY tasks/ /var/www/html/tasks/
+COPY controllers/ /var/www/html/controllers/
+COPY config/ /var/www/html/config/
+COPY models/ /var/www/html/models/
+COPY css/ /var/www/html/css/
+COPY js/ /var/www/html/js/
 
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
-    chmod -R 755 /var/www/html
-
-# Expose le port 80 pour Apache
-EXPOSE 80
+    chmod -R
