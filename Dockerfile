@@ -22,6 +22,10 @@ COPY tasks/index.php /var/www/html/
 # Copie le fichier .htaccess dans le répertoire racine d'Apache
 COPY tasks/.htaccess /var/www/html/
 
+# Copie la configuration Apache personnalisée
+COPY apache-config.conf /etc/apache2/conf-available/custom.conf
+RUN a2enconf custom
+
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
