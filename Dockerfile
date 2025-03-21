@@ -13,6 +13,11 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 # Installe les extensions PHP nécessaires (mysqli, pdo, pdo_mysql)
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+# Crée le dossier de logs Apache et les fichiers de logs
+RUN mkdir -p /var/log/apache2/ && \
+    touch /var/log/apache2/access.log /var/log/apache2/error.log && \
+    chown www-data:www-data /var/log/apache2/access.log /var/log/apache2/error.log
+
 # Définit le répertoire de travail
 WORKDIR /var/www/html
 
@@ -23,6 +28,5 @@ COPY tasks/index.php /var/www/html/
 RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
 
-# Crée les fichiers de logs et redirige-les vers la sortie standard
-RUN touch /var/log/apache2/access.log /var/log/apache2/error.log && \
-    chown www-data:www-data /var/log/apache2/
+# Expose le port 80 pour Apache
+EXPOSE 80
