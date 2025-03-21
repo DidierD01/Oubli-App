@@ -1,10 +1,10 @@
 <?php
 
 class Database {
-    private $host = 'localhost';
-    private $db_name = 'db_app'; // Change si nécessaire
+    private $host = 'mysql.railway.internal';
+    private $db_name = 'railway'; // Change si nécessaire
     private $username = 'root';  // Change si nécessaire
-    private $password = ''; // Change si nécessaire
+    private $password = 'rglxfUPkHBidvHHeXYLLLckxROKYJMpB'; // Change si nécessaire
     private $conn;
 
     // Méthode pour établir la connexion à la base de données
