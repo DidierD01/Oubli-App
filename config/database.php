@@ -1,7 +1,7 @@
 <?php
 
 class Database {
-    private $host = 'mysql.railway.internal';
+    private $host = 'metro.proxy.rlwy.net';
     private $db_name = 'railway'; // Change si nécessaire
     private $username = 'root';  // Change si nécessaire
     private $password = 'rglxfUPkHBidvHHeXYLLLckxROKYJMpB'; // Change si nécessaire
