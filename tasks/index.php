@@ -1,4 +1,10 @@
 <?php
+
+// Démarrer la session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 // Récupère l'URL demandée
 $request = $_SERVER['REQUEST_URI'];
 
@@ -17,11 +23,6 @@ switch ($request) {
         http_response_code(404);
         echo "Page non trouvée :(";
         break;
-}
-
-// Démarrer la session
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
 }
 
 require_once '../controllers/taskcontroller.php';
