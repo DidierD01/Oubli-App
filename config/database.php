@@ -2,6 +2,7 @@
 
 class Database {
     private $host = 'metro.proxy.rlwy.net';
+    private $port = 26698;
     private $db_name = 'railway'; // Change si nécessaire
     private $username = 'root';  // Change si nécessaire
     private $password = 'rglxfUPkHBidvHHeXYLLLckxROKYJMpB'; // Change si nécessaire
