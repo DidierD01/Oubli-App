@@ -21,8 +21,12 @@ RUN mkdir -p /var/log/apache2/ && \
 # Définit le répertoire de travail
 WORKDIR /var/www/html
 
-# Copie tout le projet dans /var/www/html
-COPY . /var/www/html
+# Copie le fichier index.php dans le répertoire racine d'Apache
+COPY tasks/index.php /var/www/html/
+
+# Copie la configuration Apache personnalisée
+COPY apache-config.conf /etc/apache2/conf-available/custom.conf
+RUN a2enconf custom
 
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
