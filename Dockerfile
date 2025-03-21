@@ -1,13 +1,15 @@
-# Dockerfile
 FROM php:8.2-apache
 
-# Copie tous les fichiers de ton projet dans le dossier du serveur
+# Copie tout le projet dans le dossier web d'Apache
 COPY . /var/www/html/
 
-# Active mod_rewrite si besoin
+# Active le module mod_rewrite
 RUN a2enmod rewrite
 
-# Change le dossier racine (si ton index est ailleurs)
-WORKDIR /var/www/html/app/tasks
+# ✅ Change le DocumentRoot pour pointer sur /var/www/html/app/tasks
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/app/tasks|' /etc/apache2/sites-available/000-default.conf
+
+# Donne les bons droits
+RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
