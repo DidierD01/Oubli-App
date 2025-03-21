@@ -6,6 +6,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once '../controllers/taskcontroller.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
     $user_logged_in = false;
