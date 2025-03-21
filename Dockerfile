@@ -17,10 +17,10 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 WORKDIR /var/www/html
 
 # Copie le fichier index.php dans le répertoire racine d'Apache
-COPY app/tasks/index.php /var/www/html/
+COPY Oubli-App/tasks/index.php /var/www/html/
 
 # Copie le fichier .htaccess s'il est dans app/tasks/
-COPY app/tasks/.htaccess /var/www/html/
+COPY Oubli-App/tasks/.htaccess /var/www/html/
 
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
