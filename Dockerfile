@@ -21,8 +21,8 @@ RUN mkdir -p /var/log/apache2/ && \
 # Définit le répertoire de travail
 WORKDIR /var/www/html
 
-# Copie le fichier index.php dans le répertoire racine d'Apache
-COPY tasks/index.php /var/www/html/
+# Copie tout le projet dans /var/www/html
+COPY . /var/www/html
 
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
