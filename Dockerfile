@@ -2,6 +2,7 @@ FROM php:8.2-apache
 
 # Copie tout le projet dans le dossier web d'Apache
 COPY . /var/www/html/
+COPY app/tasks/.htaccess /var/www/html/app/tasks/.htaccess
 
 # Active le module mod_rewrite
 RUN a2enmod rewrite
