@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$servername = "mysql.railway.internal";
+$servername = "metro.proxy.rlwy.net";
+$port = 26698;
 $username = "root";
 $password = "rglxfUPkHBidvHHeXYLLLckxROKYJMpB";
 $dbname = "railway";
