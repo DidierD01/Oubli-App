@@ -19,22 +19,10 @@ WORKDIR /var/www/html
 # Copie le fichier index.php dans le répertoire racine d'Apache
 COPY tasks/index.php /var/www/html/
 
-# Copie le fichier .htaccess dans le répertoire racine d'Apache
-COPY tasks/.htaccess /var/www/html/
-
-# Copie la configuration Apache personnalisée
-COPY apache-config.conf /etc/apache2/conf-available/custom.conf
-RUN a2enconf custom
-
 # Donne les permissions nécessaires à Apache
 RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
 
 # Crée les fichiers de logs et redirige-les vers la sortie standard
 RUN touch /var/log/apache2/access.log /var/log/apache2/error.log && \
-    chown www-data:www-data /var/log/apache2/access.log /var/log/apache2/error.log && \
-    ln -sf /dev/stdout /var/log/apache2/access.log && \
-    ln -sf /dev/stderr /var/log/apache2/error.log
-
-# Expose le port 80 pour Apache
-EXPOSE 80
+    chown www-data:www-data /var/log/apache2/
