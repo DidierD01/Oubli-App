@@ -1,4 +1,26 @@
 <?php
+
+<?php
+// Récupère l'URL demandée
+$request = $_SERVER['REQUEST_URI'];
+
+// Supprime les paramètres de requête (tout ce qui suit "?")
+$request = strtok($request, '?');
+
+// Redirige en fonction de l'URL
+switch ($request) {
+    case '/':
+    case '/index.php':
+        // Affiche la page d'accueil
+        echo "Bienvenue sur la page d'accueil !";
+        break;
+    default:
+        // Page non trouvée
+        http_response_code(404);
+        echo "Page non trouvée :(";
+        break;
+}
+
 // Démarrer la session
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
