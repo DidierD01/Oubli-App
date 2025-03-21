@@ -23,8 +23,10 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
 
-# Redirige les logs Apache vers la sortie standard pour les voir dans Render
-RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
+# Crée les fichiers de logs et redirige-les vers la sortie standard
+RUN touch /var/log/apache2/access.log /var/log/apache2/error.log && \
+    chown www-data:www-data /var/log/apache2/access.log /var/log/apache2/error.log && \
+    ln -sf /dev/stdout /var/log/apache2/access.log && \
     ln -sf /dev/stderr /var/log/apache2/error.log
 
 # Expose le port 80 pour Apache
