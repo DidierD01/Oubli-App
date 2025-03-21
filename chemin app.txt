@@ -1,0 +1,23 @@
+chemin app
+
+App
+	-compte
+		-login.php
+		-logout.php
+		-signup.php
+	-config
+		-database.php
+	-controllers
+		-taskcontroller.php
+	-css
+		-app.css
+		-compte.css
+	-js
+		-app.js
+	-models
+		-tasks.php
+	-public
+		-index.php(gestion php de l'accueil)
+	-tasks
+		-index.php(page accueil)
+		

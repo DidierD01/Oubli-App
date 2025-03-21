@@ -1,0 +1,129 @@
+/* Personnalisation des couleurs pastel */
+:root {
+    --bs-primary: #5271FF; /* Bleu pastel */
+    --bs-secondary: #A8DADC; /* Bleu clair pastel */
+    --bs-success: #A8E6CF; /* Vert pastel */
+    --bs-danger: #FFABAB; /* Rose pastel */
+    --bs-warning: #FFD3B6; /* Orange pastel */
+    --bs-info: #C9DAF8; /* Bleu pastel clair */
+    --bs-light: #FFFFFF; /* Blanc pour les éléments clairs */
+    --bs-dark: #1D3557; /* Bleu marine pour du contraste */
+}
+
+body{
+    margin-bottom: 80px;
+}
+
+/* Boutons principaux avec une couleur pastel douce */
+.btn-primary {
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.btn-primary:hover {
+    background-color: #5271FF !important; /* Survol avec bleu pastel */
+    border-color: #5271FF !important;
+}
+
+.btn-success {
+    background-color: var(--bs-success) !important;
+    border-color: var(--bs-success) !important;
+}
+
+.btn-success:hover {
+    background-color: #A8E6CF !important;
+    border-color: #A8E6CF !important;
+}
+
+.btn-danger {
+    background-color: var(--bs-danger) !important;
+    border-color: var(--bs-danger) !important;
+}
+
+.btn-danger:hover {
+    background-color: #FFABAB !important;
+    border-color: #FFABAB !important;
+}
+
+.btn-warning {
+    background-color: var(--bs-warning) !important;
+    border-color: var(--bs-warning) !important;
+}
+
+.btn-warning:hover {
+    background-color: #FFD3B6 !important;
+    border-color: #FFD3B6 !important;
+}
+
+.table-primary {
+    background-color: var(--bs-info); /* Changer la couleur de fond des lignes d'en-tête */
+}
+
+.badge {
+    border-radius: 50px; /* Rendre les badges plus arrondis */
+}
+
+/* Pour le bouton flottant avec couleur pastel */
+#dropdownFilterButton {
+    background-color: #A8DADC !important;
+    border: none;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1050; /* Assurez-vous que le bouton flottant est au-dessus du footer */
+}
+
+#dropdownFilterButton:hover {
+    background-color: #5271FF !important; /* Survol avec bleu pastel */
+}
+
+.form-check-input:checked {
+    background-color: #A8DADC;
+    border-color: #A8DADC;
+}
+
+.offcanvas-header {
+    background-color: #5271FF !important;
+    color: #FFFFFF;
+}
+
+.offcanvas-body {
+    background-color: #f8f9fa;
+}
+
+/* Pour les sections des tâches, on met un fond doux et clair */
+.task-category {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-category h2 {
+    color: var(--bs-dark);
+}
+
+/* Ajuster la couleur du footer */
+footer {
+    background-color: #1D3557;
+    color: #fff;
+}
+
+/* Changer la couleur de la navbar pour plus de contraste */
+.navbar {
+    background-color: #A8DADC; /* Bleu clair pastel pour la navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre */
+}
+
+/* Pour les liens dans la navbar */
+.navbar-light .navbar-nav .nav-link {
+    color: #1D3557; /* Texte sombre pour les éléments de la navbar */
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #5271FF; /* Effet de survol bleu pastel */
+}
+
+.navbar-light .navbar-brand {
+    color: #1D3557; /* Logo texte avec contraste */
+}
