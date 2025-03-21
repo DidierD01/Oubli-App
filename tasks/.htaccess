@@ -1,2 +1,4 @@
 DirectoryIndex index.php
 Options -Indexes
+AllowOverride All
+Require all granted
