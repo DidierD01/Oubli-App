@@ -1,8 +1,8 @@
 <?php
 
 // Inclure les fichiers nécessaires
-require_once '../config/database.php';
-require_once '../controllers/taskcontroller.php';
+require_once '/../config/database.php';
+require_once '/../controllers/taskcontroller.php';
 
 // Récupérer l'action et l'ID de l'URL (si présents)
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
