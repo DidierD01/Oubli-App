@@ -5,8 +5,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once '../config/database.php';
-require_once '../models/tasks.php';
+require_once '//../config/database.php';
+require_once '//../models/tasks.php';
 
 class taskcontroller {
     private $db_tasks;
@@ -22,29 +22,29 @@ class taskcontroller {
     public function handleAction($action, $id, $status) {
         if ($action === 'toggleActif') {
             $this->toggleActif($id);
-            header('Location: ../tasks/index.php?status=' . $status); // Conserver le filtre
+            header('Location: /../tasks/index.php?status=' . $status); // Conserver le filtre
             exit;
         } elseif ($action === 'delete') {
             $this->delete($id);
-            header('Location: ../tasks/index.php?status=' . $status); // Conserver le filtre
+            header('Location: /../tasks/index.php?status=' . $status); // Conserver le filtre
             exit;
         } elseif ($action === 'changeStatus') {
             $newStatus = isset($_GET['status']) ? intval($_GET['status']) : null;
             if ($id > 0 && $newStatus !== null) {
                 $this->changeStatus($id, $newStatus);
             }
-            header('Location: ../tasks/index.php?status=' . $status); // Conserver le filtre
+            header('Location: /../tasks/index.php?status=' . $status); // Conserver le filtre
             exit;
         } elseif ($action === 'archive') {
             if ($id > 0) {
                 $this->archive($id);
-                header('Location: ../tasks/index.php?status=' . $status); // Conserver le filtre
+                header('Location: /../tasks/index.php?status=' . $status); // Conserver le filtre
                 exit;
             }
         } elseif ($action === 'deleteForever') {
             if ($id > 0) {
                 $this->deleteForever($id);
-                header('Location: ../tasks/index.php?status=' . $status); // Conserver le filtre
+                header('Location: /../tasks/index.php?status=' . $status); // Conserver le filtre
                 exit;
             }
         }
@@ -59,14 +59,14 @@ class taskcontroller {
     public function index() {
 
         if (!isset($_SESSION['user_id'])) {
-            header('Location: ../compte/login.php');
+            header('Location: /../compte/login.php');
             exit;
         }
 
         $status = isset($_GET['status']) ? intval($_GET['status']) : 1; // Par défaut, afficher les tâches actives
         $user_id = $_SESSION['user_id']; // Récupérer l'ID de l'utilisateur connecté
         $tasks = $this->tasks->getTasksByStatus($status, $user_id); // Passer les deux arguments
-        require_once '../tasks/index.php';
+        require_once '/../tasks/index.php';
     }  
     
     public function create() {
@@ -80,7 +80,7 @@ class taskcontroller {
     
             if ($this->tasks->create()) {
                 echo "Tâche créée avec succès.";
-                header('Location: ../tasks/index.php');
+                header('Location: /../tasks/index.php');
                 exit;
             } else {
                 echo "Erreur lors de l'insertion de la tâche.";
@@ -99,7 +99,7 @@ class taskcontroller {
     
             $this->tasks->update($id, $tasks_name, $tasks_date);
     
-            header('Location: ../tasks/index.php');
+            header('Location: /../tasks/index.php');
             exit;
         }
     }    
