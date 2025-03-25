@@ -7,15 +7,15 @@
         <div class="d-flex align-items-center">
             <?php if (isset($_SESSION['user_id'])): ?>
                 <!-- Boutons pour l'utilisateur connecté -->
-                <a href="../compte/setting.php" class="btn btn-info me-2">
+                <a href="/../compte/setting.php" class="btn btn-info me-2">
                     <i class="fa-solid fa-gear"></i> Paramètres
                 </a>
-                <a href="../compte/logout.php" class="btn btn-danger">
+                <a href="/../compte/logout.php" class="btn btn-danger">
                     <i class="fa-solid fa-right-from-bracket"></i> Se déconnecter
                 </a>
             <?php else: ?>
                 <!-- Bouton pour l'utilisateur non connecté -->
-                <a href="../compte/login.php" class="btn btn-primary">
+                <a href="/../compte/login.php" class="btn btn-primary">
                     Se Connecter
                 </a>
             <?php endif; ?>
